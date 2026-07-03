@@ -1,6 +1,15 @@
 # Fifa API
 
-API REST desenvolvida em **Spring Boot** para gerenciamento de eventos esportivos, locais, usuários e venda de ingressos. Conta com autenticação e autorização via **JWT**.
+Projeto final da disciplina de Spring Boot — **Tema: Gestão de Ingressos (Eventos Culturais)**.
+
+API REST desenvolvida em **Spring Boot** para gerenciamento de eventos, locais, usuários e venda de ingressos, com controle de lotação máxima e estatísticas de vendas. Conta com autenticação e autorização via **JWT**.
+
+## Equipe
+
+| Nome Completo | RGM |
+|---|---|
+| _Thiago Henrique P Oliveira_ | _43672973_ |
+
 
 ## Tecnologias utilizadas
 
@@ -23,6 +32,19 @@ API REST desenvolvida em **Spring Boot** para gerenciamento de eventos esportivo
 - CRUD de eventos
 - Compra, listagem, cancelamento e resumo de ingressos
 - Documentação interativa via Swagger
+
+### Regras de negócio
+
+- Um evento não pode vender mais ingressos do que a capacidade máxima do seu local.
+- Um mesmo usuário pode comprar no máximo **5 ingressos** para o mesmo evento.
+
+### Endpoint de resumo estatístico (`GET /ingressos/resumo`)
+
+Calculado em memória (via streams) e retorna:
+- Total de ingressos vendidos
+- Receita total arrecadada
+- Taxa de ocupação média dos eventos (ingressos vendidos / capacidade máxima)
+- Evento com maior número de vendas
 
 ## Pré-requisitos
 
@@ -124,4 +146,4 @@ src/main/java/com/example/fifa
 
 ## Autor
 
-Projeto desenvolvido por Thiago Henrique, RGM: 43672973.
+Projeto desenvolvido por Thiago Henrique.
